@@ -1,5 +1,5 @@
 output "bucket_name" {
-  value = aws_s3_buket.b.bucket
+  value = aws_s3_bucket.b.bucket
 }
 
 output "sec_group" {
