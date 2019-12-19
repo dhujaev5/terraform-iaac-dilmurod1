@@ -19,7 +19,7 @@ output "password" {
 }
 
 output "wordpress" {
-  value =aws_route53_record.www.myawstestclass.com
+  value =aws_route53_record.www.name
   }
 
 output "wordpress_username" {
