@@ -1,7 +1,7 @@
 #go to region us-east-2
 provider "aws" {
-    region = "us-east-1" 
-}
+    region = "us-east-1"
+    }
 
 #search for centos latest with the owner
 data "aws_ami" "centos" {
