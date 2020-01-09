@@ -26,7 +26,7 @@ resource "aws_key_pair" "towerkey" {
 }
 
 resource "aws_instance" "web" {
-  ami           = data.aws_ami.centos.id
+    ami           = data.aws_ami.centos.id
   instance_type = "t2.micro"
   key_name = aws_key_pair.towerkey.key_name
   provisioner "remote-exec" {
@@ -50,5 +50,5 @@ resource "aws_route53_record" "tower" {
   name = "tower.example.com"
   type = "A"
   ttl = "300"
-  records = ["aws_instance.web.public_ip]
+  records = ["aws_instance.web.public_ip"]
   }
