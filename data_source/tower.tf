@@ -33,10 +33,10 @@ resource "aws_instance" "web" {
   key_name = aws_key_pair.towerkey.key_name
   provisioner "remote-exec" {
   connection {
-        host        = self.public_ip
-        type        = "ssh"
-        user        = "centos"
-        private_key = file(var.ssh_key_location)
+        host = self.public_ip
+        type  = "ssh"
+        user   = "centos"
+        private_keyb= file(var.ssh_key_location)
         }
     inline = [
         "sudo yum install -y epel-release",
@@ -50,8 +50,8 @@ resource "aws_instance" "web" {
 
 resource "aws_route53_record" "tower" {
   zone_id = "ZONE_ID"
-  name    = "tower.example.com"
-  type    = "A"
-  ttl     = "300"
+  name = "tower.example.com"
+  type = "A"
+  ttl = "300"
   records = ["aws_instance.web.public_ip]
   }
