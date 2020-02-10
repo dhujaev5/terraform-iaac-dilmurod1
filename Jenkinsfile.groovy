@@ -10,6 +10,17 @@ node {
     stage("Stage3"){
         echo "Hello World"
     }  
+    stage("Script"){
+        sh label: '', script:
+        '''#!/bin/bash
+            if [ ! -f /tmp/foo.txt ] ;
+            then
+                echo "File not found!"
+                echo "Creating file"
+                touch "/tmp/foo/txt"
+            fi
+        '''       
+    }
     stage("Stage4"){
         echo "Hello World"
         slackSend channel: 'nagios_alerts' , message: 'Completed'
