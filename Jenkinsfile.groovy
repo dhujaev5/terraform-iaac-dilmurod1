@@ -5,6 +5,7 @@ node {
     }  
     stage("Stage2"){
         echo "Hello World"
+        sleep 3
     }  
     stage("Stage3"){
         echo "Hello World"
