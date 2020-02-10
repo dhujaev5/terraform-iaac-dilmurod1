@@ -1,7 +1,7 @@
 node {
     properties([pipelineTriggers([cron('* * * * *')])])
     stage("Stage1"){
-        echo "Hello World"
+        git 'https://github.com/farrukh90/packer.git'
     }  
     stage("Stage2"){
         echo "Hello World"
