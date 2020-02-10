@@ -8,7 +8,8 @@ node {
         sleep 3
     }  
     stage("Stage3"){
-        echo "Hello World"
+        node('worker'){
+        echo "Hello World"}
     }  
     stage("Timestamp"){
         timestamps {
