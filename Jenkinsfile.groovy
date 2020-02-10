@@ -10,6 +10,12 @@ node {
     stage("Stage3"){
         echo "Hello World"
     }  
+    stage("Timestamp"){
+        timestamps {
+      echo "hello"
+}
+        
+    }
     stage("Script"){
         sh label: '', script:
         '''#!/bin/bash
